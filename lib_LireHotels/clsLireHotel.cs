@@ -34,6 +34,7 @@ namespace lib_LireHotels
             SqlDataReader reader = cmd.ExecuteReader();
             return clsHotel.fromReader(reader);
         }
+
     }
     public class clsHotel
     {

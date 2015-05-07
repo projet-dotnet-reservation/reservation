@@ -5,14 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using RechercheVolsHotels;
 
-namespace ConsoleApplication1
+namespace TestConsole
 {
     class Program
     {
         static void Main(string[] args)
         {
-            clsRecherche.rechercheHotels();
-           
+            clsRecherche.rechercheHotelsAndVols();
         }
     }
 }

@@ -85,7 +85,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lib_LireHotels", "lib_LireH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RechercheVolsHotels", "RechercheVolsHotels\RechercheVolsHotels.csproj", "{DAD17A59-39DD-4FCF-9B52-68E5397A41BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{ABCA3992-CE98-4015-84A8-0CF8D8AC4421}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "ConsoleApplication1\TestConsole.csproj", "{ABCA3992-CE98-4015-84A8-0CF8D8AC4421}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

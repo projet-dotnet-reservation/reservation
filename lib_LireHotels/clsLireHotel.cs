@@ -16,7 +16,7 @@ namespace lib_LireHotels
             this.sqlServeurURL = SQLServeurURL;
         }
 
-        public List<clsHotel> lireHotels(String ville)
+        public List<clsHotel> listerHotelsParVille(String ville)
         {
 
             SqlConnection co = new SqlConnection();

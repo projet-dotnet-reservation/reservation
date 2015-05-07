@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using lib_LireVols;
 
 [WebService(Namespace = "http://tempuri.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -22,7 +23,7 @@ public class ServiceVol : System.Web.Services.WebService
     public List<clsVol> rechercheVols(String villeDepart, String villeArrivee)
     {
         clsLireVols clsLV = new clsLireVols("LAPTOP\\SQLEXPRESS");
-        List<clsVol> vols = clsLH.listerVolsParItinéraire(villeDepart, villeArrivee);
+        List<clsVol> vols = clsLV.listerVolsParItinéraire(villeDepart, villeArrivee);
         return vols;
     }
 
@@ -30,7 +31,7 @@ public class ServiceVol : System.Web.Services.WebService
     public List<clsVol> rechercheVolsAvecDate(String villeDepart, String villeArrivee, DateTime dateDepart)
     {
         clsLireVols clsLV = new clsLireVols("LAPTOP\\SQLEXPRESS");
-        List<clsVol> vols = clsLH.listerVolParItineraireEtDate(villeDepart, villeArrivee, dateDepart);
+        List<clsVol> vols = clsLV.listerVolParItineraireEtDate(villeDepart, villeArrivee, dateDepart);
         return vols;
     }
 }

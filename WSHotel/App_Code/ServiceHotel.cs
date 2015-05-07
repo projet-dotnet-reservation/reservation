@@ -22,7 +22,7 @@ public class ServiceHotel : System.Web.Services.WebService
     public List<clsHotel> rechercheHotels(String ville)
     {
         clsLireHotel clsLH = new clsLireHotel("LAPTOP\\SQLEXPRESS");
-        List<clsHotel> hotels = clsLH.lireHotels(ville);
+        List<clsHotel> hotels = clsLH.listerHotelsParVille(ville);
         return hotels;
     }
 
@@ -30,7 +30,7 @@ public class ServiceHotel : System.Web.Services.WebService
     public List<clsHotel> rechercheHotelsAvecDate(String ville, DateTime debut, DateTime fin)
     {
         clsLireHotel clsLH = new clsLireHotel("LAPTOP\\SQLEXPRESS");
-        List<clsHotel> hotels = clsLH.lireHotels(ville);
+        List<clsHotel> hotels = clsLH.listerHotelsParVille(ville);
         return hotels;
     }
 }

@@ -87,6 +87,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RechercheVolsHotels", "Rech
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{ABCA3992-CE98-4015-84A8-0CF8D8AC4421}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lib_ResaVols", "lib_ResaVols\lib_ResaVols.csproj", "{CCEF81B0-1633-4D59-A755-613A0804CA77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -121,6 +123,10 @@ Global
 		{ABCA3992-CE98-4015-84A8-0CF8D8AC4421}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABCA3992-CE98-4015-84A8-0CF8D8AC4421}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABCA3992-CE98-4015-84A8-0CF8D8AC4421}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCEF81B0-1633-4D59-A755-613A0804CA77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCEF81B0-1633-4D59-A755-613A0804CA77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCEF81B0-1633-4D59-A755-613A0804CA77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCEF81B0-1633-4D59-A755-613A0804CA77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -133,5 +139,6 @@ Global
 		{0D777532-F17B-48FE-BDF6-884AA8FF1267} = {3B4D66DB-568A-457F-81CF-2B52EDED2BEB}
 		{DAD17A59-39DD-4FCF-9B52-68E5397A41BF} = {E8A48765-359D-4DC8-9A39-DA8A3FEF4B4E}
 		{ABCA3992-CE98-4015-84A8-0CF8D8AC4421} = {E66625BC-00DA-460D-A661-4678A58231CC}
+		{CCEF81B0-1633-4D59-A755-613A0804CA77} = {3B4D66DB-568A-457F-81CF-2B52EDED2BEB}
 	EndGlobalSection
 EndGlobal

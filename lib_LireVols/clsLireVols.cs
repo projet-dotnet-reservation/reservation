@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace lib_LireHotels
+namespace lib_LireVols
 {
-    public class Class1
+    public class clsLireVols
     {
     }
 }

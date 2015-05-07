@@ -38,8 +38,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="clsRecherche.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lib_LireHotels\lib_LireHotels.csproj">
+      <Project>{0d777532-f17b-48fe-bdf6-884aa8ff1267}</Project>
+      <Name>lib_LireHotels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib_LireVols\lib_LireVols.csproj">
+      <Project>{7619d839-754c-4dda-ae08-77ca69fc38b7}</Project>
+      <Name>lib_LireVols</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

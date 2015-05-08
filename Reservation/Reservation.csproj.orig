@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CCEF81B0-1633-4D59-A755-613A0804CA77}</ProjectGuid>
+    <ProjectGuid>{F2B367E3-7B7A-4941-AF74-232121083681}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>lib_ResaVols</RootNamespace>
-    <AssemblyName>lib_ResaVols</AssemblyName>
-    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <RootNamespace>Reservation</RootNamespace>
+    <AssemblyName>Reservation</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,7 +35,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>lib_resaVols.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>reservation.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -43,11 +44,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsResaVols.cs" />
+    <Compile Include="clsReservation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="lib_resaVols.snk" />
+    <ProjectReference Include="..\lib_ResaHotels\lib_ResaHotels.csproj">
+      <Project>{20524862-b7bd-4e4c-aa47-88e8ccb03428}</Project>
+      <Name>lib_ResaHotels</Name>
+    </ProjectReference>
+<<<<<<< HEAD:TestDalResaHotel/TestDalResaHotel.csproj
+    <ProjectReference Include="..\RechercheVolsHotels\RechercheVolsHotels.csproj">
+      <Project>{dad17a59-39dd-4fcf-9b52-68e5397a41bf}</Project>
+      <Name>RechercheVolsHotels</Name>
+    </ProjectReference>
+=======
+    <ProjectReference Include="..\lib_ResaVols\lib_ResaVols.csproj">
+      <Project>{ccef81b0-1633-4d59-a755-613a0804ca77}</Project>
+      <Name>lib_ResaVols</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="reservation.snk" />
+>>>>>>> ef7565b29b9f0d8be9b262fe579ff49892e39f98:Reservation/Reservation.csproj
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

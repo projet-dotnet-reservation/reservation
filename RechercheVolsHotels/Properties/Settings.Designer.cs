@@ -42,5 +42,23 @@ namespace RechercheVolsHotels.Properties {
                 return ((string)(this["RechercheVolsHotels_wsVol_ServiceVol"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("PLOP")]
+        public string BdName {
+            get {
+                return ((string)(this["BdName"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("BAL")]
+        public string TEST {
+            get {
+                return ((string)(this["TEST"]));
+            }
+        }
     }
 }

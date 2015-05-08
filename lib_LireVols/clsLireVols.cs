@@ -94,6 +94,7 @@ namespace lib_LireVols
             return liste;
         }
 
+        override
          public String ToString()
          {
              return "Vols : " + this.id + " - " + this.villeDepart + " - " + this.villeArrivee + " - " + this.dateDepart + " - " + this.dateArrivee + System.Environment.NewLine;

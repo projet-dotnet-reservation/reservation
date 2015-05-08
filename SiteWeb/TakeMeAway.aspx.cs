@@ -40,7 +40,7 @@ public partial class SearchForm : System.Web.UI.Page
         date_arrivee_hotel.Text = date_depart.Text;
         date_depart_hotel.Text = date_retour.Text;
         // Récupération des données
-        volsAllers = RechercheVolsHotels.clsRecherche.rechercheVolsAvecDate(villeDepart, villeArrivee, dateDepart);
+        /* volsAllers = RechercheVolsHotels.clsRecherche.rechercheVolsAvecDate(villeDepart, villeArrivee, dateDepart);
         if (volsAllers.Count != 0)
         {
             // Liste des vols allers
@@ -63,7 +63,7 @@ public partial class SearchForm : System.Web.UI.Page
                     + "Arrivée le " + String.Format("{0:d/M/yyyy à HH:mm}", volRetour.dateArrivee);
                 vols_retours.Items.Add(item);
             }
-            /* Liste des hôtels
+            // Liste des hôtels
             hotels = RechercheVolsHotels.clsRecherche.rechercheHotels(villeArrivee);
             foreach (var hotel in hotels)
             {
@@ -72,14 +72,12 @@ public partial class SearchForm : System.Web.UI.Page
                 item.Selected = hotels.IndexOf(hotel) == 0;
                 item.Text = hotel.nom;
                 vols_retours.Items.Add(item);
-            }*/
-        }
+            }
+        } */
     }
 
-    protected void change_vol_aller(int index)
+    protected void emmenez_moi_Click(object sender, EventArgs e)
     {
-        check = index;
-        //volAllerSelectionne = volsAllers[index];
+        
     }
-
 }

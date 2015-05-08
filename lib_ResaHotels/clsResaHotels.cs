@@ -4,18 +4,23 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.EnterpriseServices;
 
 namespace lib_ResaHotels
 {
-    public class clsResaHotels
+    [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
+    public class clsResaHotels : ServicedComponent
     {
         private String sqlServeurURL;
+
+        public clsResaHotels() { }
 
         public clsResaHotels(String url)
         {
             this.sqlServeurURL = url;
         }
 
+        [AutoComplete]
         public void reserverHotel(String email, int idHotel, DateTime dateDeDebut, DateTime dateDeFin)
         {
             SqlConnection co = new SqlConnection();

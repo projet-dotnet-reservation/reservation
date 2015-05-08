@@ -68,6 +68,7 @@ namespace lib_LireHotels
             return liste;
         }
 
+        override
         public String ToString()
         {
             return "" + this.id + " - " + this.nom + " - " + this.ville + " - " + this.debutDispo + " - " + this.finDispo + System.Environment.NewLine;

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using lib_LireHotels;
 using lib_LireVols;
+using System.Configuration;
 
 
 namespace RechercheVolsHotels
@@ -40,5 +41,22 @@ namespace RechercheVolsHotels
             wsHotel.clsHotel[] liste = sh.rechercheHotelsAvecDate(ville, debut, fin);
             return new List<wsHotel.clsHotel>(liste);
         }
+
+        private static void ReadSetting(string key)
+        {
+            try
+            {
+                var appSettings = ConfigurationManager.AppSettings;
+                string result = Properties.Settings.Default.TEST ?? "Not Found";
+                Console.WriteLine(result);
+                while(true) {}
+            }
+            catch (ConfigurationErrorsException)
+            {
+                Console.WriteLine("Error reading app settings");
+                while (true) { }
+            }
+        }
+
     }
 }

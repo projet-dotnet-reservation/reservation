@@ -13,6 +13,8 @@ namespace lib_ResaVols
     {
         private String sqlServeurURL;
 
+        public clsResaVols() { }
+
         public clsResaVols(String url)
         {
             this.sqlServeurURL = url;

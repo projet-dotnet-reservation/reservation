@@ -13,6 +13,8 @@ namespace lib_ResaHotels
     {
         private String sqlServeurURL;
 
+        public clsResaHotels() { }
+
         public clsResaHotels(String url)
         {
             this.sqlServeurURL = url;

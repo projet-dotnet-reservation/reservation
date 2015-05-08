@@ -94,6 +94,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reservation", "Reservation\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestServicedComponents", "TestServicedComponents\TestServicedComponents.csproj", "{16313254-EB24-44C7-AE95-BDB94BFAE28C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSMQReservation", "MSMQReservation\MSMQReservation.csproj", "{FE6318AC-60DA-4D7D-8575-CFA39562B5AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -140,6 +142,10 @@ Global
 		{16313254-EB24-44C7-AE95-BDB94BFAE28C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16313254-EB24-44C7-AE95-BDB94BFAE28C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16313254-EB24-44C7-AE95-BDB94BFAE28C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE6318AC-60DA-4D7D-8575-CFA39562B5AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6318AC-60DA-4D7D-8575-CFA39562B5AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6318AC-60DA-4D7D-8575-CFA39562B5AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6318AC-60DA-4D7D-8575-CFA39562B5AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -157,5 +163,6 @@ Global
 		{DAD17A59-39DD-4FCF-9B52-68E5397A41BF} = {E8A48765-359D-4DC8-9A39-DA8A3FEF4B4E}
 		{F2B367E3-7B7A-4941-AF74-232121083681} = {E8A48765-359D-4DC8-9A39-DA8A3FEF4B4E}
 		{16313254-EB24-44C7-AE95-BDB94BFAE28C} = {E66625BC-00DA-460D-A661-4678A58231CC}
+		{FE6318AC-60DA-4D7D-8575-CFA39562B5AA} = {E8A48765-359D-4DC8-9A39-DA8A3FEF4B4E}
 	EndGlobalSection
 EndGlobal

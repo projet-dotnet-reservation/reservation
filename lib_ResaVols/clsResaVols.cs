@@ -4,18 +4,23 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.EnterpriseServices;
 
 namespace lib_ResaVols
 {
-    public class clsResaVols
+    [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
+    public class clsResaVols : ServicedComponent
     {
         private String sqlServeurURL;
+
+        public clsResaVols() { }
 
         public clsResaVols(String url)
         {
             this.sqlServeurURL = url;
         }
 
+        [AutoComplete]
         public void reserverVol(String email, int idVol)
         {
             SqlConnection co = new SqlConnection();

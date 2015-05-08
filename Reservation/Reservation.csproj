@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{99AFDE15-3A78-4BFD-9452-2F54ED0221AE}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{F2B367E3-7B7A-4941-AF74-232121083681}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestDalResaHotel</RootNamespace>
-    <AssemblyName>TestDalResaHotel</AssemblyName>
+    <RootNamespace>Reservation</RootNamespace>
+    <AssemblyName>Reservation</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,9 +21,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,16 +31,20 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>reservation.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="clsReservation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -48,10 +52,13 @@
       <Project>{20524862-b7bd-4e4c-aa47-88e8ccb03428}</Project>
       <Name>lib_ResaHotels</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RechercheVolsHotels\RechercheVolsHotels.csproj">
-      <Project>{dad17a59-39dd-4fcf-9b52-68e5397a41bf}</Project>
-      <Name>RechercheVolsHotels</Name>
+    <ProjectReference Include="..\lib_ResaVols\lib_ResaVols.csproj">
+      <Project>{ccef81b0-1633-4d59-a755-613a0804ca77}</Project>
+      <Name>lib_ResaVols</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="reservation.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

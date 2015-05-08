@@ -1,0 +1,22 @@
+body {
+    background: url(../images/background.jpg) no-repeat center center fixed; 
+    background-color: rgb(13,45,102);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    margin-top: 10px;
+}
+
+.header {
+    text-align: center;
+}
+
+.destination input[type="submit"] {
+    float: right;
+}
+
+.results {
+    background-color: rgba(255,255,255,0.3);
+}

@@ -83,6 +83,8 @@
 
                     <!-- VOLS ALLER -->
 
+                    <span><%= check %></span>
+
                     <div class="row" >
 
                         <h4>Vols allers de <asp:Label ID="aller_ville_depart" runat="server" Text=""></asp:Label> à <asp:Label ID="aller_ville_arrivee" runat="server" Text=""></asp:Label></h4>
@@ -90,21 +92,13 @@
                         <div class="panel panel-default results">
 
                             <div class="panel-body">
-
                                 <% if (volsAllers.Count == 0) { %> 
-
                                     <span>Aucun vol ne nous permet de vous amener là-bas...</span>
-                                    
                                 <% } else if (hotels.Count == 0) { %>
-
                                     <span>Nous ne pouvons pas vous amener dans un endroit sans hôtel disponible...</span>
-
                                 <% } else { %>
-
-                                    
-
+                                    <asp:RadioButtonList ID="vols_allers" runat="server"></asp:RadioButtonList>
                                 <% } %>
-
                             </div>
 
                         </div>
@@ -120,21 +114,13 @@
                         <div class="panel panel-default results">
 
                             <div class="panel-body">
-
                                 <% if (volsAllers.Count == 0 || hotels.Count == 0) { %> 
-
                                     <span>Sans vol aller, pas de vol retour !</span>
-                                    
                                 <% } else if (volsRetours.Count == 0) { %>
-
                                     <span>Nous ne pouvons pas vous ramener chez vous, prenez un aller simple ;)</span>
-
                                 <% } else { %>
-
-
-
+                                    <asp:RadioButtonList ID="vols_retours" runat="server"></asp:RadioButtonList>
                                 <% } %>
-
                             </div>
 
                         </div>
@@ -150,19 +136,12 @@
                         <div class="panel panel-default results">
 
                             <div class="panel-body">
-
                                 <% if (hotels.Count == 0) { %> 
-
                                     <span>Nous n'avons malheureusement pas trouvé d'hôtel pour vous loger là-bas...</span>
-                                    
                                 <% } else if (volsAllers.Count == 0) { %>
-                                
                                     <span>Sans vol aller, pas d'hôtel grande classe !</span>
-
                                 <% } else { %>
-
-                                    
-
+                                    <asp:RadioButtonList ID="hotels_disponibles" runat="server"></asp:RadioButtonList>                                    
                                 <% } %>
 
                             </div>

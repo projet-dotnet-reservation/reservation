@@ -15,7 +15,7 @@ namespace RechercheVolsHotels
         public static List<wsVol.clsVol> rechercheVols(String villeDepart, String villeArrivee)
         {
             wsVol.ServiceVol sv = new wsVol.ServiceVol();
-            wsVol.clsVol[] liste = sv.rechercheVols(villeArrivee, villeArrivee)
+            wsVol.clsVol[] liste = sv.rechercheVols(villeArrivee, villeArrivee);
             return new List<wsVol.clsVol>(liste);
         }
 

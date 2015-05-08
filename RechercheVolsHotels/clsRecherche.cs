@@ -11,42 +11,34 @@ namespace RechercheVolsHotels
     public class clsRecherche
     {
 
-        public static void rechercheHotelsAndVols()
+
+        public static List<wsVol.clsVol> rechercheVols(String villeDepart, String villeArrivee)
         {
-            clsLireHotel clsLH = new clsLireHotel("WIN8\\SQLEXPRESS");
-            List<clsHotel> hotels = clsLH.listerHotelsParVille("Nantes");
-
-            clsLireVols clsV = new clsLireVols("WIN8\\SQLEXPRESS");
-            List<clsVol> vols = clsV.listerVolsParItinéraire("Nantes", "Montpellier");
-
-
-            foreach (var h in hotels)
-                Console.WriteLine(h.ToString());
-            foreach (var v in vols)
-                Console.WriteLine(v.ToString());
-            while (true) { }
+            wsVol.ServiceVol sv = new wsVol.ServiceVol();
+            wsVol.clsVol[] liste = sv.rechercheVols(villeArrivee, villeArrivee)
+            return new List<wsVol.clsVol>(liste);
         }
 
-        public static RechercheVolsHotels.wsHotel.clsHotel[] getListeVols()
+        public static List<wsVol.clsVol> rechercheVolsAvecDate(String villeDepart, String villeArrivee, DateTime dateDepart)
         {
-            wsHotel.ServiceHotel sh = new wsHotel.ServiceHotel();
-            RechercheVolsHotels.wsHotel.clsHotel[] liste;
-            liste = sh.rechercheHotels("Paris");
-            return liste;
-            foreach (var h in liste)
-                Console.WriteLine(h.nom);
-            while (true) { }
+            wsVol.ServiceVol sv = new wsVol.ServiceVol();
+            wsVol.clsVol[] liste = sv.rechercheVolsAvecDate(villeArrivee, villeArrivee, dateDepart);
+            return new List<wsVol.clsVol>(liste);
         }
 
-        public static void getListeHotels()
+
+        public static List<wsHotel.clsHotel> rechercheHotels(String ville)
         {
             wsHotel.ServiceHotel sh = new wsHotel.ServiceHotel();
-            RechercheVolsHotels.wsHotel.clsHotel[] liste;
-            liste = sh.rechercheHotels("Paris");
-            foreach (var h in liste)
-                Console.WriteLine(h.nom);
-            while (true) { }
+            wsHotel.clsHotel[] liste  = sh.rechercheHotels(ville);
+            return new List<wsHotel.clsHotel>(liste);
         }
-        
+
+        public static List<wsHotel.clsHotel> rechercheHotelsAvecDate(String ville, DateTime debut, DateTime fin)
+        {
+            wsHotel.ServiceHotel sh = new wsHotel.ServiceHotel();
+            wsHotel.clsHotel[] liste = sh.rechercheHotelsAvecDate(ville, debut, fin);
+            return new List<wsHotel.clsHotel>(liste);
+        }
     }
 }

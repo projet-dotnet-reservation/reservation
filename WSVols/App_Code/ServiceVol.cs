@@ -22,7 +22,7 @@ public class ServiceVol : System.Web.Services.WebService
     [WebMethod]
     public List<clsVol> rechercheVols(String villeDepart, String villeArrivee)
     {
-        clsLireVols clsLV = new clsLireVols("LAPTOP\\SQLEXPRESS");
+        clsLireVols clsLV = new clsLireVols("KILLIAN\\SQLEXPRESS");
         List<clsVol> vols = clsLV.listerVolsParItinéraire(villeDepart, villeArrivee);
         return vols;
     }
@@ -30,7 +30,7 @@ public class ServiceVol : System.Web.Services.WebService
     [WebMethod]
     public List<clsVol> rechercheVolsAvecDate(String villeDepart, String villeArrivee, DateTime dateDepart)
     {
-        clsLireVols clsLV = new clsLireVols("LAPTOP\\SQLEXPRESS");
+        clsLireVols clsLV = new clsLireVols("KILLIAN\\SQLEXPRESS");
         List<clsVol> vols = clsLV.listerVolParItineraireEtDate(villeDepart, villeArrivee, dateDepart);
         return vols;
     }

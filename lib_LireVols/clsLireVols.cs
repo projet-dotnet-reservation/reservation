@@ -45,7 +45,7 @@ namespace lib_LireVols
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = co;
-            cmd.CommandText = "sp_findByRoute";
+            cmd.CommandText = "sp_findByRouteAndDeparture";
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.Add("@departure", SqlDbType.NChar);

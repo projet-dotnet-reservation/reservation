@@ -11,14 +11,7 @@ namespace lib_ResaHotels
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
     public class clsResaHotels : ServicedComponent
     {
-        private String sqlServeurURL;
-
-        public clsResaHotels() { }
-
-        public clsResaHotels(String url)
-        {
-            this.sqlServeurURL = url;
-        }
+        public String sqlServeurURL;
 
         [AutoComplete]
         public void reserverHotel(String email, int idHotel, DateTime dateDeDebut, DateTime dateDeFin)

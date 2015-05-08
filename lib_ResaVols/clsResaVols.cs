@@ -11,14 +11,7 @@ namespace lib_ResaVols
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
     public class clsResaVols : ServicedComponent
     {
-        private String sqlServeurURL;
-
-        public clsResaVols() { }
-
-        public clsResaVols(String url)
-        {
-            this.sqlServeurURL = url;
-        }
+        public String sqlServeurURL;
 
         [AutoComplete]
         public void reserverVol(String email, int idVol)
@@ -38,8 +31,7 @@ namespace lib_ResaVols
             cmd.Parameters.Add("@idVol", SqlDbType.Int);
             cmd.Parameters["@idVol"].Value = idVol;
 
-            String res = Convert.ToString(cmd.ExecuteScalar());
-            if (!res.Equals(email)) throw new Exception();
+            cmd.ExecuteScalar();
         }
     }
 }

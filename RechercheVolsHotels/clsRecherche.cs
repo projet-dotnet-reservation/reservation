@@ -16,14 +16,14 @@ namespace RechercheVolsHotels
         public static List<wsVol.clsVol> rechercheVols(String villeDepart, String villeArrivee)
         {
             wsVol.ServiceVol sv = new wsVol.ServiceVol();
-            wsVol.clsVol[] liste = sv.rechercheVols(villeArrivee, villeArrivee);
+            wsVol.clsVol[] liste = sv.rechercheVols(villeDepart, villeArrivee);
             return new List<wsVol.clsVol>(liste);
         }
 
         public static List<wsVol.clsVol> rechercheVolsAvecDate(String villeDepart, String villeArrivee, DateTime dateDepart)
         {
             wsVol.ServiceVol sv = new wsVol.ServiceVol();
-            wsVol.clsVol[] liste = sv.rechercheVolsAvecDate(villeArrivee, villeArrivee, dateDepart);
+            wsVol.clsVol[] liste = sv.rechercheVolsAvecDate(villeDepart, villeArrivee, dateDepart);
             return new List<wsVol.clsVol>(liste);
         }
 

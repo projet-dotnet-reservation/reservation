@@ -13,8 +13,11 @@ namespace Reservation
         [AutoComplete]
         public Boolean reservation(String mail, int idVol, int idHotel, DateTime debutResa, DateTime finResa)
         {
-            clsResaHotels resaHotel = new clsResaHotels("ServURL");
-            clsResaVols resaVols = new clsResaVols("ServURL");
+            clsResaHotels resaHotel = new clsResaHotels();
+            resaHotel.sqlServeurURL = "WIN8\\SQLEXPRESS";
+
+            clsResaVols resaVols = new clsResaVols();
+            resaVols.sqlServeurURL = "WIN8\\SQLEXPRESS";
 
             // Todo : check values
             resaVols.reserverVol(mail, idVol);

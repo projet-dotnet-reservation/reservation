@@ -40,31 +40,32 @@ public partial class SearchForm : System.Web.UI.Page
         date_arrivee_hotel.Text = date_depart.Text;
         date_depart_hotel.Text = date_retour.Text;
         // Récupération des données
-        /* volsAllers = RechercheVolsHotels.clsRecherche.rechercheVolsAvecDate(villeDepart, villeArrivee, dateDepart);
+        volsAllers = RechercheVolsHotels.clsRecherche.rechercheVolsAvecDate(villeDepart, villeArrivee, dateDepart);
         if (volsAllers.Count != 0)
         {
             // Liste des vols allers
+            vols_allers.Items.Clear();
             foreach (var volAller in volsAllers) {
                 ListItem item = new ListItem();
                 item.Value = "vol_aller_" + volAller.id;
                 item.Selected = volsAllers.IndexOf(volAller) == 0;
-                item.Text = "Départ le " + String.Format("{0:d/M/yyyy à HH:mm}", volAller.dateDepart) + "<br />"
-                    + "Arrivée le " + String.Format("{0:d/M/yyyy à HH:mm}", volAller.dateArrivee);
+                item.Text = "&nbsp; Départ le " + String.Format("{0:d/M/yyyy à HH:mm}", volAller.dateDepart) + " pour une arrivée le " + String.Format("{0:d/M/yyyy à HH:mm}", volAller.dateArrivee);
                 vols_allers.Items.Add(item);
             }
             // Liste des vols retours
             volsRetours = RechercheVolsHotels.clsRecherche.rechercheVolsAvecDate(villeArrivee, villeDepart, dateDepart.AddDays(1));
+            vols_retours.Items.Clear();
             foreach (var volRetour in volsRetours)
             {
                 ListItem item = new ListItem();
                 item.Value = "vol_retour_" + volRetour.id;
                 item.Selected = volsRetours.IndexOf(volRetour) == 0;
-                item.Text = "Départ le " + String.Format("{0:d/M/yyyy à HH:mm}", volRetour.dateDepart) + "<br />"
-                    + "Arrivée le " + String.Format("{0:d/M/yyyy à HH:mm}", volRetour.dateArrivee);
+                item.Text = "&nbsp; Départ le " + String.Format("{0:d/M/yyyy à HH:mm}", volRetour.dateDepart) + " pour une arrivée le " + String.Format("{0:d/M/yyyy à HH:mm}", volRetour.dateArrivee);
                 vols_retours.Items.Add(item);
             }
-            // Liste des hôtels
+            /*/ Liste des hôtels
             hotels = RechercheVolsHotels.clsRecherche.rechercheHotels(villeArrivee);
+            hotels_disponibles.Items.Clear();
             foreach (var hotel in hotels)
             {
                 ListItem item = new ListItem();
@@ -72,8 +73,8 @@ public partial class SearchForm : System.Web.UI.Page
                 item.Selected = hotels.IndexOf(hotel) == 0;
                 item.Text = hotel.nom;
                 vols_retours.Items.Add(item);
-            }
-        } */
+            } */
+        } 
     }
 
     protected void emmenez_moi_Click(object sender, EventArgs e)

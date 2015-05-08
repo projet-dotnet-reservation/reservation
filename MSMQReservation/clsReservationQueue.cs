@@ -9,11 +9,12 @@ namespace MSMQReservation
     {
         public void addResaToQueue(String mail, int idHotel, int idVol, DateTime debutResa, DateTime finResa)
         {
-            ResaItem resa = new ResaItem();
+            ResaInfo resa = new ResaInfo();
             resa.mail = mail;
-
-            resa.idVol = idVol;
-            
+            resa.idVol = Convert.ToString(idVol);
+            resa.idHotel = Convert.ToString(idHotel);
+            resa.debutResa = debutResa.ToShortDateString();
+            resa.finResa = finResa.ToShortDateString();
 
             MessageQueue msmq = new MessageQueue(@".\private$\reservation2015");
             msmq.Send(resa, "Reservation client : " + resa.mail);
@@ -21,11 +22,11 @@ namespace MSMQReservation
         }
     }
 
-    public class ResaItem {
+    public class ResaInfo {
         public String mail { get; set; }
-        public int idHotel { get; set; }
-        public int idVol { get; set; }
-        public DateTime debutResa { get; set; }
-        public DateTime finResa { get; set; }
+        public String idHotel { get; set; }
+        public String idVol { get; set; }
+        public String debutResa { get; set; }
+        public String finResa { get; set; }
     }
 }

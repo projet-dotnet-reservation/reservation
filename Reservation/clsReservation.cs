@@ -17,9 +17,8 @@ namespace Reservation
             MessageQueue msmq = new MessageQueue(@".\private$\reservation2015");
             //récupération sans vider la file d'un message, de type ResaInfo
             msmq.Formatter = new XmlMessageFormatter(new Type[] { typeof(ResaInfo) });
-
-            var resa = (ResaInfo)msmq.Peek().Body;
-
+            
+            ResaInfo resa = (ResaInfo)msmq.Peek().Body;
             if (createReservation(resa))
             {
                 // Todo : Receive dans un autre composant ? cf. note dans la correction du TP
@@ -42,8 +41,8 @@ namespace Reservation
             resaVols.sqlServeurURL = "WIN8\\SQLEXPRESS";
 
             // Todo : check values
-            resaVols.reserverVol(resa.mail, resa.idVol);
-            resaHotel.reserverHotel(resa.mail, resa.idHotel, resa.debutResa, resa.finResa);
+            resaVols.reserverVol(resa.mail, Convert.ToInt16(resa.idVol));
+            resaHotel.reserverHotel(resa.mail, Convert.ToInt16(resa.idHotel), Convert.ToDateTime(resa.debutResa), Convert.ToDateTime(resa.finResa));
             
             return true;
         }
@@ -52,9 +51,9 @@ namespace Reservation
     public class ResaInfo
     {
         public String mail { get; set; }
-        public int idHotel { get; set; }
-        public int idVol { get; set; }
-        public DateTime debutResa { get; set; }
-        public DateTime finResa { get; set; }
+        public String idHotel { get; set; }
+        public String idVol { get; set; }
+        public String debutResa { get; set; }
+        public String finResa { get; set; }
     }
 }

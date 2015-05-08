@@ -43,13 +43,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MSMQReservation\MSMQReservation.csproj">
+      <Project>{fe6318ac-60da-4d7d-8575-cfa39562b5aa}</Project>
+      <Name>MSMQReservation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Reservation\Reservation.csproj">
       <Project>{f2b367e3-7b7a-4941-af74-232121083681}</Project>
       <Name>Reservation</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

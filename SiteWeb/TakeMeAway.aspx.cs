@@ -35,5 +35,6 @@ public partial class SearchForm : System.Web.UI.Page
         date_arrivee_hotel.Text = date_depart.Text;
         date_depart_hotel.Text = date_retour.Text;
         // Récupération des données
+        volsAllers = RechercheVolsHotels.clsRecherche.rechercheVolsAvecDate(villeDepart, villeArrivee, dateDepart);
     }
 }

@@ -99,6 +99,10 @@
 
                                     <span>Nous ne pouvons pas vous amener dans un endroit sans hôtel disponible...</span>
 
+                                <% } else { %>
+
+                                    
+
                                 <% } %>
 
                             </div>
@@ -125,6 +129,10 @@
 
                                     <span>Nous ne pouvons pas vous ramener chez vous, prenez un aller simple ;)</span>
 
+                                <% } else { %>
+
+
+
                                 <% } %>
 
                             </div>
@@ -143,13 +151,13 @@
 
                             <div class="panel-body">
 
-                                <% if (volsAllers.Count == 0) { %> 
-
-                                    <span>Sans vol aller, pas d'hôtel grande classe !</span>
-                                    
-                                <% } else if (hotels.Count == 0) { %>
+                                <% if (hotels.Count == 0) { %> 
 
                                     <span>Nous n'avons malheureusement pas trouvé d'hôtel pour vous loger là-bas...</span>
+                                    
+                                <% } else if (volsAllers.Count == 0) { %>
+                                
+                                    <span>Sans vol aller, pas d'hôtel grande classe !</span>
 
                                 <% } else { %>
 

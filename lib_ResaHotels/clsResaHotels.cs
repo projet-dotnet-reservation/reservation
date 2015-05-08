@@ -27,20 +27,19 @@ namespace lib_ResaHotels
             cmd.CommandText = "sp_storeReservation";
             cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.Parameters.Add("@hotelId", SqlDbType.Int);
+            cmd.Parameters["@hotelId"].Value = idHotel;
+
             cmd.Parameters.Add("@mail", SqlDbType.NChar);
             cmd.Parameters["@mail"].Value = email;
 
-            cmd.Parameters.Add("@idHotel", SqlDbType.Int);
-            cmd.Parameters["@idHotel"].Value = idHotel;
-
             cmd.Parameters.Add("@startDate", SqlDbType.DateTime);
-            cmd.Parameters["@startDate"].Value = idHotel;
+            cmd.Parameters["@startDate"].Value = dateDeDebut;
 
             cmd.Parameters.Add("@endDate", SqlDbType.DateTime);
-            cmd.Parameters["@endDate"].Value = idHotel;
+            cmd.Parameters["@endDate"].Value = dateDeFin;
 
-            String res = Convert.ToString(cmd.ExecuteScalar());
-            if (!res.Equals(email)) throw new Exception();
+            cmd.ExecuteScalar();
         }
     }
 }

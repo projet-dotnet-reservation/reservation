@@ -26,5 +26,27 @@ namespace RechercheVolsHotels
                 Console.WriteLine(v.ToString());
             while (true) { }
         }
+
+        public static RechercheVolsHotels.wsHotel.clsHotel[] getListeVols()
+        {
+            wsHotel.ServiceHotel sh = new wsHotel.ServiceHotel();
+            RechercheVolsHotels.wsHotel.clsHotel[] liste;
+            liste = sh.rechercheHotels("Paris");
+            return liste;
+            foreach (var h in liste)
+                Console.WriteLine(h.nom);
+            while (true) { }
+        }
+
+        public static void getListeHotels()
+        {
+            wsHotel.ServiceHotel sh = new wsHotel.ServiceHotel();
+            RechercheVolsHotels.wsHotel.clsHotel[] liste;
+            liste = sh.rechercheHotels("Paris");
+            foreach (var h in liste)
+                Console.WriteLine(h.nom);
+            while (true) { }
+        }
+        
     }
 }

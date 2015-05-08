@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="rechercheVols">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="villeDepart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="villeArrivee" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="rechercheVolsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rechercheVolsResult" type="tns:ArrayOfClsVol" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfClsVol">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="clsVol" nillable="true" type="tns:clsVol" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="clsVol">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="villeDepart" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="villeArrivee" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dateDepart" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dateArrivee" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="rechercheVolsAvecDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="villeDepart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="villeArrivee" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateDepart" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="rechercheVolsAvecDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rechercheVolsAvecDateResult" type="tns:ArrayOfClsVol" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="rechercheVolsSoapIn">
+    <wsdl:part name="parameters" element="tns:rechercheVols" />
+  </wsdl:message>
+  <wsdl:message name="rechercheVolsSoapOut">
+    <wsdl:part name="parameters" element="tns:rechercheVolsResponse" />
+  </wsdl:message>
+  <wsdl:message name="rechercheVolsAvecDateSoapIn">
+    <wsdl:part name="parameters" element="tns:rechercheVolsAvecDate" />
+  </wsdl:message>
+  <wsdl:message name="rechercheVolsAvecDateSoapOut">
+    <wsdl:part name="parameters" element="tns:rechercheVolsAvecDateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceVolSoap">
+    <wsdl:operation name="rechercheVols">
+      <wsdl:input message="tns:rechercheVolsSoapIn" />
+      <wsdl:output message="tns:rechercheVolsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="rechercheVolsAvecDate">
+      <wsdl:input message="tns:rechercheVolsAvecDateSoapIn" />
+      <wsdl:output message="tns:rechercheVolsAvecDateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceVolSoap" type="tns:ServiceVolSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="rechercheVols">
+      <soap:operation soapAction="http://tempuri.org/rechercheVols" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rechercheVolsAvecDate">
+      <soap:operation soapAction="http://tempuri.org/rechercheVolsAvecDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceVolSoap12" type="tns:ServiceVolSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="rechercheVols">
+      <soap12:operation soapAction="http://tempuri.org/rechercheVols" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="rechercheVolsAvecDate">
+      <soap12:operation soapAction="http://tempuri.org/rechercheVolsAvecDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceVol">
+    <wsdl:port name="ServiceVolSoap" binding="tns:ServiceVolSoap">
+      <soap:address location="http://localhost:38260/ServiceVol.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceVolSoap12" binding="tns:ServiceVolSoap12">
+      <soap12:address location="http://localhost:38260/ServiceVol.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

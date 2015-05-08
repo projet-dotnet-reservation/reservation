@@ -12,37 +12,33 @@ namespace RechercheVolsHotels
     {
 
 
-        public static wsVol.clsVol[] rechercheVols(String villeDepart, String villeArrivee)
+        public static List<wsVol.clsVol> rechercheVols(String villeDepart, String villeArrivee)
         {
             wsVol.ServiceVol sv = new wsVol.ServiceVol();
-            wsVol.clsVol[] liste;
-            liste = sv.rechercheVols(villeArrivee, villeArrivee);
-            return liste;
+            wsVol.clsVol[] liste = sv.rechercheVols(villeArrivee, villeArrivee)
+            return new List<wsVol.clsVol>(liste);
         }
 
-        public static wsVol.clsVol[] rechercheVolsAvecDate(String villeDepart, String villeArrivee, DateTime dateDepart)
+        public static List<wsVol.clsVol> rechercheVolsAvecDate(String villeDepart, String villeArrivee, DateTime dateDepart)
         {
             wsVol.ServiceVol sv = new wsVol.ServiceVol();
-            wsVol.clsVol[] liste;
-            liste = sv.rechercheVolsAvecDate(villeArrivee, villeArrivee, dateDepart);
-            return liste;
+            wsVol.clsVol[] liste = sv.rechercheVolsAvecDate(villeArrivee, villeArrivee, dateDepart);
+            return new List<wsVol.clsVol>(liste);
         }
 
 
-        public static wsHotel.clsHotel[] rechercheHotels(String ville)
+        public static List<wsHotel.clsHotel> rechercheHotels(String ville)
         {
             wsHotel.ServiceHotel sh = new wsHotel.ServiceHotel();
-            RechercheVolsHotels.wsHotel.clsHotel[] liste;
-            liste = sh.rechercheHotels(ville);
-            return liste;
+            wsHotel.clsHotel[] liste  = sh.rechercheHotels(ville);
+            return new List<wsHotel.clsHotel>(liste);
         }
 
-        public static wsHotel.clsHotel[] rechercheHotelsAvecDate(String ville, DateTime debut, DateTime fin)
+        public static List<wsHotel.clsHotel> rechercheHotelsAvecDate(String ville, DateTime debut, DateTime fin)
         {
             wsHotel.ServiceHotel sh = new wsHotel.ServiceHotel();
-            RechercheVolsHotels.wsHotel.clsHotel[] liste;
-            liste = sh.rechercheHotelsAvecDate(ville, debut, fin);
-            return liste;
+            wsHotel.clsHotel[] liste = sh.rechercheHotelsAvecDate(ville, debut, fin);
+            return new List<wsHotel.clsHotel>(liste);
         }
     }
 }

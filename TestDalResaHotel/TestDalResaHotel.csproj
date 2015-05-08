@@ -48,6 +48,10 @@
       <Project>{20524862-b7bd-4e4c-aa47-88e8ccb03428}</Project>
       <Name>lib_ResaHotels</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RechercheVolsHotels\RechercheVolsHotels.csproj">
+      <Project>{dad17a59-39dd-4fcf-9b52-68e5397a41bf}</Project>
+      <Name>RechercheVolsHotels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

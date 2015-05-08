@@ -23,7 +23,7 @@ namespace RechercheVolsHotels
         public static List<wsVol.clsVol> rechercheVolsAvecDate(String villeDepart, String villeArrivee, DateTime dateDepart)
         {
             wsVol.ServiceVol sv = new wsVol.ServiceVol();
-            wsVol.clsVol[] liste = sv.rechercheVolsAvecDate(villeArrivee, villeArrivee, dateDepart);
+            wsVol.clsVol[] liste = sv.rechercheVolsAvecDate(villeDepart, villeArrivee, dateDepart);
             return new List<wsVol.clsVol>(liste);
         }
 

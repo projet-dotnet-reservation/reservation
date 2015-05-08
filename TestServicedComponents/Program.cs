@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Reservation;
+using MSMQReservation;
 using System.EnterpriseServices;
 
 namespace TestServicedComponents
@@ -10,8 +10,8 @@ namespace TestServicedComponents
     {
         static void Main(string[] args)
         {
-            clsReservation resa = new clsReservation();
-            resa.reservation("test@test.com", 2, 2, new DateTime(2015, 1, 1), new DateTime(2015, 1, 12));
+            clsReservationQueue resaQueue = new clsReservationQueue();
+            resaQueue.addResaToQueue("test@test.com", 2, 2, new DateTime(2015, 1, 1), new DateTime(2015, 1, 12));
         }
     }
 }

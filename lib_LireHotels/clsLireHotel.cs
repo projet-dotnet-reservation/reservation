@@ -4,23 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace lib_LireHotels
 {
     public class clsLireHotel
     {
-        private String sqlServeurURL;
-
-        public clsLireHotel(String SQLServeurURL)
-        {
-            this.sqlServeurURL = SQLServeurURL;
-        }
 
         public List<clsHotel> listerHotelsParVille(String ville)
         {
 
             SqlConnection co = new SqlConnection();
-            co.ConnectionString = "Data Source=" + this.sqlServeurURL + ";Initial Catalog=HOTEL;Integrated Security=True";
+            co.ConnectionString = ConfigurationManager.ConnectionStrings["connecBaseHotel"].ConnectionString;
             co.Open();
 
             SqlCommand cmd = new SqlCommand();

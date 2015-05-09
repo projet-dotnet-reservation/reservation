@@ -4,22 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace lib_LireVols
 {
     public class clsLireVols
     {
-        private String sqlServeurURL;
-
-        public clsLireVols(String SQLServeurURL)
-        {
-            this.sqlServeurURL = SQLServeurURL;
-        }
 
         public List<clsVol> listerVolsParItinéraire(String villeDepart, String villeArrivee)
         {
             SqlConnection co = new SqlConnection();
-            co.ConnectionString = "Data Source=" + this.sqlServeurURL + ";Initial Catalog=VOL;Integrated Security=True";
+            co.ConnectionString = ConfigurationManager.ConnectionStrings["connecBaseVol"].ConnectionString;
             co.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -40,7 +35,7 @@ namespace lib_LireVols
         public List<clsVol> listerVolParItineraireEtDate(String villeDepart, String villeArrivee, DateTime dateDepart)
         {
             SqlConnection co = new SqlConnection();
-            co.ConnectionString = "Data Source=" + this.sqlServeurURL + ";Initial Catalog=VOL;Integrated Security=True";
+            co.ConnectionString = ConfigurationManager.ConnectionStrings["connecBaseVol"].ConnectionString;
             co.Open();
 
             SqlCommand cmd = new SqlCommand();

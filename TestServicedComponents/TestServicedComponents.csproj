@@ -46,6 +46,14 @@
     <None Include="app.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\lib_LireHotels\lib_LireHotels.csproj">
+      <Project>{0d777532-f17b-48fe-bdf6-884aa8ff1267}</Project>
+      <Name>lib_LireHotels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\lib_LireVols\lib_LireVols.csproj">
+      <Project>{7619d839-754c-4dda-ae08-77ca69fc38b7}</Project>
+      <Name>lib_LireVols</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MSMQReservation\MSMQReservation.csproj">
       <Project>{fe6318ac-60da-4d7d-8575-cfa39562b5aa}</Project>
       <Name>MSMQReservation</Name>
@@ -54,6 +62,9 @@
       <Project>{f2b367e3-7b7a-4941-af74-232121083681}</Project>
       <Name>Reservation</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

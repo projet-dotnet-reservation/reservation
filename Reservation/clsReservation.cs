@@ -11,6 +11,8 @@ namespace Reservation
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
     public class clsReservation : ServicedComponent
     {
+        private String urlServer = "WIN8\\SQLEXPRESS";
+
         [AutoComplete]
         public void readReservationQueue()
         {
@@ -35,10 +37,10 @@ namespace Reservation
         private Boolean createReservation(ResaInfo resa)
         {
             clsResaHotels resaHotel = new clsResaHotels();
-            resaHotel.sqlServeurURL = "WIN8\\SQLEXPRESS";
+            resaHotel.sqlServeurURL = urlServer;
 
             clsResaVols resaVols = new clsResaVols();
-            resaVols.sqlServeurURL = "WIN8\\SQLEXPRESS";
+            resaVols.sqlServeurURL = urlServer;
 
             // Todo : check values
             resaVols.reserverVol(resa.mail, Convert.ToInt16(resa.idVol));

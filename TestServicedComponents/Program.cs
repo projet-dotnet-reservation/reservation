@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using MSMQReservation;
 using Reservation;
+using lib_LireHotels;
+using lib_LireVols;
 using System.EnterpriseServices;
 
 namespace TestServicedComponents
@@ -11,9 +13,15 @@ namespace TestServicedComponents
     {
         static void Main(string[] args)
         {
+            clsLireHotel lireHotels = new clsLireHotel();
+            clsLireVols lireVols = new clsLireVols();
+            if (lireHotels.listerHotelsParVille("Nantes").Count > 0) Console.WriteLine("Recherche Hotel : OK");
+            if (lireVols.listerVolsParItinéraire("Nantes", "Montpellier").Count > 0) Console.WriteLine("Recherche Vol : OK");
+            
             clsReservationQueue resaQueue = new clsReservationQueue();
             for (var i = 1; i < 11; i++)
             {
+                Console.WriteLine("Ajout résa N°" + i + " à la message queue");
                 resaQueue.addResaToQueue("test@test.com", i, 10-i, new DateTime(2015, i, i), new DateTime(2015, i, i + 4));
             }
 
@@ -22,7 +30,7 @@ namespace TestServicedComponents
                 System.Threading.Thread.Sleep(1000);
                 clsReservation resaServ = new clsReservation();
                 resaServ.readReservationQueue();
-                Console.WriteLine("Read message i");
+                Console.WriteLine("Enregistrement réservation N°"+i+ ": OK");
             }
         }
     }

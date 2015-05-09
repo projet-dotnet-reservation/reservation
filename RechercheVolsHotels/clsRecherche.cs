@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using lib_LireHotels;
-using lib_LireVols;
 using System.Configuration;
+using RechercheVolsHotels.wsVol;
+using RechercheVolsHotels.wsHotel;
 
 
 namespace RechercheVolsHotels
@@ -13,33 +13,33 @@ namespace RechercheVolsHotels
     {
 
 
-        public static List<wsVol.clsVol> rechercheVols(String villeDepart, String villeArrivee)
+        public static List<clsVol> rechercheVols(String villeDepart, String villeArrivee)
         {
-            wsVol.ServiceVol sv = new wsVol.ServiceVol();
-            wsVol.clsVol[] liste = sv.rechercheVols(villeDepart, villeArrivee);
-            return new List<wsVol.clsVol>(liste);
+            ServiceVol sv = new ServiceVol();
+            clsVol[] liste = sv.rechercheVols(villeDepart, villeArrivee);
+            return new List<clsVol>(liste);
         }
 
-        public static List<wsVol.clsVol> rechercheVolsAvecDate(String villeDepart, String villeArrivee, DateTime dateDepart)
+        public static List<clsVol> rechercheVolsAvecDate(String villeDepart, String villeArrivee, DateTime dateDepart)
         {
-            wsVol.ServiceVol sv = new wsVol.ServiceVol();
-            wsVol.clsVol[] liste = sv.rechercheVolsAvecDate(villeDepart, villeArrivee, dateDepart);
-            return new List<wsVol.clsVol>(liste);
+            ServiceVol sv = new ServiceVol();
+            clsVol[] liste = sv.rechercheVolsAvecDate(villeDepart, villeArrivee, dateDepart);
+            return new List<clsVol>(liste);
         }
 
 
-        public static List<wsHotel.clsHotel> rechercheHotels(String ville)
+        public static List<clsHotel> rechercheHotels(String ville)
         {
-            wsHotel.ServiceHotel sh = new wsHotel.ServiceHotel();
-            wsHotel.clsHotel[] liste  = sh.rechercheHotels(ville);
-            return new List<wsHotel.clsHotel>(liste);
+            ServiceHotel sh = new ServiceHotel();
+            clsHotel[] liste  = sh.rechercheHotels(ville);
+            return new List<clsHotel>(liste);
         }
 
-        public static List<wsHotel.clsHotel> rechercheHotelsAvecDate(String ville, DateTime debut, DateTime fin)
+        public static List<clsHotel> rechercheHotelsAvecDate(String ville, DateTime debut, DateTime fin)
         {
-            wsHotel.ServiceHotel sh = new wsHotel.ServiceHotel();
-            wsHotel.clsHotel[] liste = sh.rechercheHotelsAvecDate(ville, debut, fin);
-            return new List<wsHotel.clsHotel>(liste);
+            ServiceHotel sh = new ServiceHotel();
+            clsHotel[] liste = sh.rechercheHotelsAvecDate(ville, debut, fin);
+            return new List<clsHotel>(liste);
         }
 
         private static void ReadSetting(string key)

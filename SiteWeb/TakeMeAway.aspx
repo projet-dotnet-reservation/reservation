@@ -134,14 +134,20 @@
                 
                     <% if (volsAllers.Count != 0 && hotels.Count != 0) { %> 
                         <div class="row">
-                            <div class="col-lg-offset-6 col-lg-4">
-                                <asp:TextBox ID="mail" runat="server" CssClass="form-control" Text="super@man.com"></asp:TextBox>
+                            <div class="col-lg-offset-7 col-lg-3">
+                                <asp:TextBox ID="mail" runat="server" CssClass="form-control" Text="yourmail@example.com"></asp:TextBox>
                             </div>
                             <div class="col-lg-2">
                                 <asp:Button ID="emmenez_moi" runat="server" Text="Emmenez-moi !" CssClass="btn btn-success" OnClick="emmenez_moi_Click"/>
                             </div>
                         </div>    
                     <% } %>
+
+                <% } else if (reservation) { %>
+
+                    <div class="row">
+                        <h4>Votre réservation a été prise en compte ! Bonnes vacances :-)</h4>
+                    </div>
 
                 <% } %>
 

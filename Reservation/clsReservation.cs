@@ -43,7 +43,9 @@ namespace Reservation
             //resaVols.sqlServeurURL = urlServer;
 
             // Todo : check values
-            resaVols.reserverVol(resa.mail, Convert.ToInt16(resa.idVol));
+            resaVols.reserverVol(resa.mail, Convert.ToInt16(resa.idVolAller));
+            if (resa.idVolRetour != null)
+                resaVols.reserverVol(resa.mail, Convert.ToInt16(resa.idVolRetour));
             resaHotel.reserverHotel(resa.mail, Convert.ToInt16(resa.idHotel), Convert.ToDateTime(resa.debutResa), Convert.ToDateTime(resa.finResa));
             
             return true;
@@ -53,8 +55,9 @@ namespace Reservation
     public class ResaInfo
     {
         public String mail { get; set; }
+        public String idVolAller { get; set; }
+        public String idVolRetour { get; set; }
         public String idHotel { get; set; }
-        public String idVol { get; set; }
         public String debutResa { get; set; }
         public String finResa { get; set; }
     }

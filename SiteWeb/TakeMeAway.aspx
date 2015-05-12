@@ -22,11 +22,9 @@
                 <!-- HEADER -->
 
                 <div class="row">
-
                     <div class="header">
                         <h1><strong>Vololo</strong> <span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span> Réservation de vols et d'hôtels en ligne</h1>
                     </div>
-            
                 </div>
                 
                 <br />    
@@ -136,7 +134,10 @@
                 
                     <% if (volsAllers.Count != 0 && hotels.Count != 0) { %> 
                         <div class="row">
-                            <div class="col-lg-12">
+                            <div class="col-lg-offset-6 col-lg-4">
+                                <asp:TextBox ID="mail" runat="server" CssClass="form-control" Text="super@man.com"></asp:TextBox>
+                            </div>
+                            <div class="col-lg-2">
                                 <asp:Button ID="emmenez_moi" runat="server" Text="Emmenez-moi !" CssClass="btn btn-success" OnClick="emmenez_moi_Click"/>
                             </div>
                         </div>    

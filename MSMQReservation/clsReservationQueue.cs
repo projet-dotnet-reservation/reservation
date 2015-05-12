@@ -7,11 +7,12 @@ namespace MSMQReservation
 {
     public class clsReservationQueue
     {
-        public void addResaToQueue(String mail, int idHotel, int idVol, DateTime debutResa, DateTime finResa)
+        public static void addResaToQueue(String mail, int idVolAller, int idVolRetour, int idHotel, DateTime debutResa, DateTime finResa)
         {
             ResaInfo resa = new ResaInfo();
             resa.mail = mail;
-            resa.idVol = Convert.ToString(idVol);
+            resa.idVolAller = Convert.ToString(idVolAller);
+            resa.idVolRetour = idVolRetour == -1 ? null : Convert.ToString(idVolRetour);
             resa.idHotel = Convert.ToString(idHotel);
             resa.debutResa = debutResa.ToShortDateString();
             resa.finResa = finResa.ToShortDateString();
@@ -24,8 +25,9 @@ namespace MSMQReservation
 
     public class ResaInfo {
         public String mail { get; set; }
+        public String idVolAller { get; set; }
+        public String idVolRetour { get; set; }
         public String idHotel { get; set; }
-        public String idVol { get; set; }
         public String debutResa { get; set; }
         public String finResa { get; set; }
     }

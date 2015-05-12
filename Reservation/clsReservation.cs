@@ -11,12 +11,11 @@ namespace Reservation
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
     public class clsReservation : ServicedComponent
     {
-        //private String urlServer = "LAPTOP\\SQLEXPRESS";//clsConfig.readConfigString("sqlServerURL");
 
         [AutoComplete]
         public void readReservationQueue()
         {
-            MessageQueue msmq = new MessageQueue(@".\private$\reservation2015");
+            MessageQueue msmq = new MessageQueue(@"FormatName:Direct=OS:WIN8\private$\reservation2015");
             //récupération sans vider la file d'un message, de type ResaInfo
             msmq.Formatter = new XmlMessageFormatter(new Type[] { typeof(ResaInfo) });
             

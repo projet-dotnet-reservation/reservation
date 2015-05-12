@@ -9,24 +9,18 @@ using RechercheVolsHotels;
 public partial class SearchForm : System.Web.UI.Page
 {
 
-    protected Boolean recherche;
+    protected Boolean recherche = false;
     protected String villeDepart;
     protected String villeArrivee;
     protected DateTime dateDepart;
     protected DateTime dateRetour;
-    protected List<RechercheVolsHotels.wsHotel.clsHotel> hotels;
-    protected List<RechercheVolsHotels.wsVol.clsVol> volsAllers;
-    protected List<RechercheVolsHotels.wsVol.clsVol> volsRetours;
+    protected List<RechercheVolsHotels.wsHotel.clsHotel> hotels = new List<RechercheVolsHotels.wsHotel.clsHotel>();
+    protected List<RechercheVolsHotels.wsVol.clsVol> volsAllers = new List<RechercheVolsHotels.wsVol.clsVol>();
+    protected List<RechercheVolsHotels.wsVol.clsVol> volsRetours = new List<RechercheVolsHotels.wsVol.clsVol>();
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
-        {
-            recherche = false;
-            hotels = new List<RechercheVolsHotels.wsHotel.clsHotel>();
-            volsAllers = new List<RechercheVolsHotels.wsVol.clsVol>();
-            volsRetours = new List<RechercheVolsHotels.wsVol.clsVol>();
-        }
+
     }
 
     protected void faites_moi_rever_Click(object sender, EventArgs e)
@@ -78,7 +72,7 @@ public partial class SearchForm : System.Web.UI.Page
                 ListItem item = new ListItem();
                 item.Value = "hotel_" + hotel.id;
                 item.Selected = hotels.IndexOf(hotel) == 0;
-                item.Text = hotel.nom;
+                item.Text = "&nbsp; " + hotel.nom;
                 hotels_disponibles.Items.Add(item);
             } 
         }

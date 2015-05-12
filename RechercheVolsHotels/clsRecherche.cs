@@ -5,13 +5,13 @@ using System.Text;
 using System.Configuration;
 using RechercheVolsHotels.wsVol;
 using RechercheVolsHotels.wsHotel;
+using lib_Config;
 
 
 namespace RechercheVolsHotels
 {
     public class clsRecherche
     {
-
 
         public static List<clsVol> rechercheVols(String villeDepart, String villeArrivee)
         {
@@ -40,22 +40,6 @@ namespace RechercheVolsHotels
             ServiceHotel sh = new ServiceHotel();
             clsHotel[] liste = sh.rechercheHotelsAvecDate(ville, debut, fin);
             return new List<clsHotel>(liste);
-        }
-
-        private static void ReadSetting(string key)
-        {
-            try
-            {
-                var appSettings = ConfigurationManager.AppSettings;
-                string result = Properties.Settings.Default.TEST ?? "Not Found";
-                Console.WriteLine(result);
-                while(true) {}
-            }
-            catch (ConfigurationErrorsException)
-            {
-                Console.WriteLine("Error reading app settings");
-                while (true) { }
-            }
         }
 
     }

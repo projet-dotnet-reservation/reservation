@@ -16,8 +16,7 @@ namespace lib_LireHotels
         {
 
             SqlConnection co = new SqlConnection();
-            //co.ConnectionString = ConfigurationManager.ConnectionStrings["connecBaseHotel"].ConnectionString;
-            co.ConnectionString = "Data Source=LAPTOP\\SQLEXPRESS; Initial Catalog=HOTEL; Integrated Security=True";// clsConfig.readConfigString("connectBDHotel");
+            co.ConnectionString = clsConfig.readConfigString("connectBDHotel");//"Data Source=LAPTOP\\SQLEXPRESS; Initial Catalog=HOTEL; Integrated Security=True";
             co.Open();
 
             SqlCommand cmd = new SqlCommand();

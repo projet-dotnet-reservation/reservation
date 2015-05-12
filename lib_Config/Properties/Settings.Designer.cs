@@ -77,5 +77,25 @@ namespace lib_Config.Properties {
                 return ((string)(this["sqlServerURL"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1/WSHotel/ServiceHotel.asmx")]
+        public string RechercheVolsHotels_wsHotel_ServiceHotel {
+            get {
+                return ((string)(this["RechercheVolsHotels_wsHotel_ServiceHotel"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1/WSVols/ServiceVol.asmx")]
+        public string RechercheVolsHotels_wsVol_ServiceVol {
+            get {
+                return ((string)(this["RechercheVolsHotels_wsVol_ServiceVol"]));
+            }
+        }
     }
 }

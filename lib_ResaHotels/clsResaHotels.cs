@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.EnterpriseServices;
+using lib_Config;
 
 namespace lib_ResaHotels
 {
@@ -17,7 +18,7 @@ namespace lib_ResaHotels
         public void reserverHotel(String email, int idHotel, DateTime dateDeDebut, DateTime dateDeFin)
         {
             SqlConnection co = new SqlConnection();
-            co.ConnectionString = "Data Source=LAPTOP\\SQLEXPRESS;Initial Catalog=ResHotel;Integrated Security=True";
+            co.ConnectionString = clsConfig.readConfigString("connectBDResHotel"); //"Data Source=LAPTOP\\SQLEXPRESS;Initial Catalog=ResHotel;Integrated Security=True";
             co.Open();
 
             SqlCommand cmd = new SqlCommand();

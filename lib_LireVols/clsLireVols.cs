@@ -15,8 +15,7 @@ namespace lib_LireVols
         public List<clsVol> listerVolsParItinéraire(String villeDepart, String villeArrivee)
         {
             SqlConnection co = new SqlConnection();
-            //co.ConnectionString = ConfigurationManager.ConnectionStrings["connecBaseVol"].ConnectionString;
-            co.ConnectionString = "Data Source=LAPTOP\\SQLEXPRESS;Initial Catalog=VOL;Integrated Security=True";//clsConfig.readConfigString("connectBDVol");
+            co.ConnectionString = clsConfig.readConfigString("connectBDVol"); //"Data Source=LAPTOP\\SQLEXPRESS;Initial Catalog=VOL;Integrated Security=True";
             co.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -38,7 +37,7 @@ namespace lib_LireVols
         {
             SqlConnection co = new SqlConnection();
             //co.ConnectionString = ConfigurationManager.ConnectionStrings["connecBaseVol"].ConnectionString;
-            co.ConnectionString = "Data Source=LAPTOP\\SQLEXPRESS;Initial Catalog=VOL;Integrated Security=True"; //clsConfig.readConfigString("connectBDVol");
+            co.ConnectionString = clsConfig.readConfigString("connectBDVol"); //"Data Source=LAPTOP\\SQLEXPRESS;Initial Catalog=VOL;Integrated Security=True"; 
             co.Open();
 
             SqlCommand cmd = new SqlCommand();

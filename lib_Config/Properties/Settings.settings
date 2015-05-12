@@ -20,5 +20,11 @@
     <Setting Name="sqlServerURL" Type="System.String" Scope="Application">
       <Value Profile="(Default)">LAPTOP\SQLEXPRESS</Value>
     </Setting>
+    <Setting Name="RechercheVolsHotels_wsHotel_ServiceHotel" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://127.0.0.1/WSHotel/ServiceHotel.asmx</Value>
+    </Setting>
+    <Setting Name="RechercheVolsHotels_wsVol_ServiceVol" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://127.0.0.1/WSVols/ServiceVol.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

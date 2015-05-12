@@ -18,11 +18,10 @@ namespace TestServicedComponents
             if (lireHotels.listerHotelsParVille("Nantes").Count > 0) Console.WriteLine("Recherche Hotel : OK");
             if (lireVols.listerVolsParItinéraire("Nantes", "Montpellier").Count > 0) Console.WriteLine("Recherche Vol : OK");
             
-            clsReservationQueue resaQueue = new clsReservationQueue();
             for (var i = 1; i < 11; i++)
             {
                 Console.WriteLine("Ajout résa N°" + i + " à la message queue");
-                resaQueue.addResaToQueue("test@test.com", i, 10-i, new DateTime(2015, i, i), new DateTime(2015, i, i + 4));
+                clsReservationQueue.addResaToQueue("test@test.com", i, -1, 10 - i, new DateTime(2015, i, i), new DateTime(2015, i, i + 4));
             }
 
             for (var i = 0; i < 10; i++)

@@ -87,7 +87,7 @@
                             <div class="panel-body">
                                 <% if (volsAllers.Count == 0) { %> 
                                     <span>Aucun vol ne nous permet de vous amener là-bas...</span>
-                                <% } else if (hotels.Count != 0) { %>
+                                <% } else if (hotels.Count == 0) { %>
                                     <span>Nous ne pouvons pas vous emmener dans un endroit sans hôtel disponible...</span>
                                 <% } else { %>
                                     <asp:RadioButtonList ID="vols_allers" runat="server"></asp:RadioButtonList>
@@ -147,6 +147,7 @@
 
             </form>
 
+            <asp:Label ID="coucou" runat="server"></asp:Label>
         </div>
 
     </body>

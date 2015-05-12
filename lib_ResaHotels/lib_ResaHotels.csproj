@@ -52,12 +52,6 @@
   <ItemGroup>
     <None Include="lib_resaHotels.snk" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\lib_Config\lib_Config.csproj">
-      <Project>{39b78df4-2a21-41ef-ac5b-66a994c40371}</Project>
-      <Name>lib_Config</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

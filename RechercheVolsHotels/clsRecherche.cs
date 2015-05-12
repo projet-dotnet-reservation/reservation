@@ -5,7 +5,6 @@ using System.Text;
 using System.Configuration;
 using RechercheVolsHotels.wsVol;
 using RechercheVolsHotels.wsHotel;
-using lib_Config;
 
 
 namespace RechercheVolsHotels

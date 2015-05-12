@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.EnterpriseServices;
-using lib_Config;
+
 
 namespace lib_ResaVols
 {
@@ -18,7 +18,7 @@ namespace lib_ResaVols
         public void reserverVol(String email, int idVol)
         {
             SqlConnection co = new SqlConnection();
-            co.ConnectionString = clsConfig.readConfigString("connectBDResVol");//"Data Source=LAPTOP\\SQLEXPRESS;Initial Catalog=ResVol;Integrated Security=True";
+            co.ConnectionString = "Data Source=LAPTOP\\SQLEXPRESS;Initial Catalog=ResVol;Integrated Security=True";
             co.Open();
 
             SqlCommand cmd = new SqlCommand();

@@ -9,20 +9,24 @@ using RechercheVolsHotels;
 public partial class SearchForm : System.Web.UI.Page
 {
 
-    protected Boolean recherche = false;
+    protected Boolean recherche;
     protected String villeDepart;
     protected String villeArrivee;
     protected DateTime dateDepart;
     protected DateTime dateRetour;
-    protected List<RechercheVolsHotels.wsHotel.clsHotel> hotels = new List<RechercheVolsHotels.wsHotel.clsHotel>();
-    protected List<RechercheVolsHotels.wsVol.clsVol> volsAllers = new List<RechercheVolsHotels.wsVol.clsVol>();
-    protected List<RechercheVolsHotels.wsVol.clsVol> volsRetours = new List<RechercheVolsHotels.wsVol.clsVol>();
-
-    protected int check = 10;
+    protected List<RechercheVolsHotels.wsHotel.clsHotel> hotels;
+    protected List<RechercheVolsHotels.wsVol.clsVol> volsAllers;
+    protected List<RechercheVolsHotels.wsVol.clsVol> volsRetours;
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!IsPostBack)
+        {
+            recherche = false;
+            hotels = new List<RechercheVolsHotels.wsHotel.clsHotel>();
+            volsAllers = new List<RechercheVolsHotels.wsVol.clsVol>();
+            volsRetours = new List<RechercheVolsHotels.wsVol.clsVol>();
+        }
     }
 
     protected void faites_moi_rever_Click(object sender, EventArgs e)
@@ -77,11 +81,24 @@ public partial class SearchForm : System.Web.UI.Page
                 item.Text = hotel.nom;
                 hotels_disponibles.Items.Add(item);
             } 
-        } 
+        }
+        ViewState["volsAllers"] = volsAllers;
+        ViewState["volsRetours"] = volsRetours;
+        ViewState["hotels"] = hotels;
+        ViewState["recherche"] = recherche;
+        ViewState["villeDepart"] = villeDepart;
+        ViewState["villeArrivee"] = villeArrivee;
+        ViewState["dateDepart"] = dateDepart;
+        ViewState["dateRetour"] = dateRetour;
     }
 
     protected void emmenez_moi_Click(object sender, EventArgs e)
     {
+        volsAllers = ((List<RechercheVolsHotels.wsVol.clsVol>)ViewState["volsAllers"]);
+        volsRetours = ((List<RechercheVolsHotels.wsVol.clsVol>)ViewState["volsRetours"]);
+        hotels = ((List<RechercheVolsHotels.wsHotel.clsHotel>)ViewState["hotels"]);
+        dateRetour = (DateTime)ViewState["dateRetour"];
+
         int idVolAller = volsAllers[vols_allers.SelectedIndex].id;
         int idVolRetour = -1;
         if (volsRetours.Count != 0) idVolRetour = volsRetours[vols_retours.SelectedIndex].id;

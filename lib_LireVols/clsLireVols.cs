@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using lib_Config;
 
 namespace lib_LireVols
 {

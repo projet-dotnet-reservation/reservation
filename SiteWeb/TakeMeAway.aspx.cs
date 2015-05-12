@@ -10,6 +10,7 @@ public partial class SearchForm : System.Web.UI.Page
 {
 
     protected Boolean recherche = false;
+    protected Boolean reservation = false;
     protected String villeDepart;
     protected String villeArrivee;
     protected DateTime dateDepart;
@@ -80,9 +81,6 @@ public partial class SearchForm : System.Web.UI.Page
         ViewState["volsRetours"] = volsRetours;
         ViewState["hotels"] = hotels;
         ViewState["recherche"] = recherche;
-        ViewState["villeDepart"] = villeDepart;
-        ViewState["villeArrivee"] = villeArrivee;
-        ViewState["dateDepart"] = dateDepart;
         ViewState["dateRetour"] = dateRetour;
     }
 
@@ -98,7 +96,7 @@ public partial class SearchForm : System.Web.UI.Page
         if (volsRetours.Count != 0) idVolRetour = volsRetours[vols_retours.SelectedIndex].id;
         int idHotel = hotels[hotels_disponibles.SelectedIndex].id;
         MSMQReservation.clsReservationQueue.addResaToQueue(mail.Text, idVolAller, idVolRetour, idHotel, volsAllers[vols_allers.SelectedIndex].dateArrivee, dateRetour.AddDays(-1));
-        Response.Redirect("http://google.fr", false);
+        reservation = true;
     }
 
 }

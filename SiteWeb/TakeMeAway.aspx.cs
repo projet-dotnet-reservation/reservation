@@ -43,6 +43,7 @@ public partial class SearchForm : System.Web.UI.Page
         {
             // Modification de la page
             recherche = true;
+            erreur.Text = "";
             aller_ville_depart.Text = villeDepart;
             aller_ville_arrivee.Text = villeArrivee;
             retour_ville_depart.Text = villeArrivee;

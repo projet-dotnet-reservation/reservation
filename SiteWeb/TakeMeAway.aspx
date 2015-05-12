@@ -66,6 +66,7 @@
                         <br />
 
                         <div class="col-lg-12">
+                            <asp:Label ID="error" runat="server"></asp:Label>
                             <asp:Button ID="faites_moi_rever" runat="server" Text="Faites-moi rêver !" CssClass="btn btn-success" OnClick="faites_moi_rever_Click" />
                         </div>
 

@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using lib_Config;
 
 namespace lib_LireVols
 {
@@ -14,7 +15,8 @@ namespace lib_LireVols
         public List<clsVol> listerVolsParItinéraire(String villeDepart, String villeArrivee)
         {
             SqlConnection co = new SqlConnection();
-            co.ConnectionString = ConfigurationManager.ConnectionStrings["connecBaseVol"].ConnectionString;
+            //co.ConnectionString = ConfigurationManager.ConnectionStrings["connecBaseVol"].ConnectionString;
+            co.ConnectionString = "Data Source=LAPTOP\\SQLEXPRESS;Initial Catalog=VOL;Integrated Security=True";//clsConfig.readConfigString("connectBDVol");
             co.Open();
 
             SqlCommand cmd = new SqlCommand();
@@ -35,7 +37,8 @@ namespace lib_LireVols
         public List<clsVol> listerVolParItineraireEtDate(String villeDepart, String villeArrivee, DateTime dateDepart)
         {
             SqlConnection co = new SqlConnection();
-            co.ConnectionString = ConfigurationManager.ConnectionStrings["connecBaseVol"].ConnectionString;
+            //co.ConnectionString = ConfigurationManager.ConnectionStrings["connecBaseVol"].ConnectionString;
+            co.ConnectionString = "Data Source=LAPTOP\\SQLEXPRESS;Initial Catalog=VOL;Integrated Security=True"; //clsConfig.readConfigString("connectBDVol");
             co.Open();
 
             SqlCommand cmd = new SqlCommand();

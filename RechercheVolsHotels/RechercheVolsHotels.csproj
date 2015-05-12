@@ -48,6 +48,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="Web References\wsHotel\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -66,10 +67,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://localhost:38256/ServiceHotel.asmx">
+    <WebReferenceUrl Include="http://127.0.0.1/WSHotel/ServiceHotel.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\wsHotel\</RelPath>
-      <UpdateFromURL>http://localhost:38256/ServiceHotel.asmx</UpdateFromURL>
+      <UpdateFromURL>http://127.0.0.1/WSHotel/ServiceHotel.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -77,10 +78,10 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>RechercheVolsHotels_wsHotel_ServiceHotel</CachedSettingsPropName>
     </WebReferenceUrl>
-    <WebReferenceUrl Include="http://localhost:38260/ServiceVol.asmx">
+    <WebReferenceUrl Include="http://127.0.0.1/WSVols/ServiceVol.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\wsVol\</RelPath>
-      <UpdateFromURL>http://localhost:38260/ServiceVol.asmx</UpdateFromURL>
+      <UpdateFromURL>http://127.0.0.1/WSVols/ServiceVol.asmx</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -90,7 +91,9 @@
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

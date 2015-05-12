@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="lib_Config.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TEST" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TEST</Value>
+    </Setting>
+    <Setting Name="connectBDVol" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=LAPTOP\SQLEXPRESS; Initial Catalog=VOL; Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="connectBDHotel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=LAPTOP\SQLEXPRESS; Initial Catalog=HOTEL; Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="connectBDResVol" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=LAPTOP\SQLEXPRESS; Initial Catalog=RESVOL; Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="connectBDResHotel" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Data Source=LAPTOP\SQLEXPRESS; Initial Catalog=RESHOTEL; Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="sqlServerURL" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">LAPTOP\SQLEXPRESS</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -11,13 +11,13 @@ namespace lib_ResaHotels
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
     public class clsResaHotels : ServicedComponent
     {
-        public String sqlServeurURL;
+        //public String sqlServeurURL;
 
         [AutoComplete]
         public void reserverHotel(String email, int idHotel, DateTime dateDeDebut, DateTime dateDeFin)
         {
             SqlConnection co = new SqlConnection();
-            co.ConnectionString = "Data Source=" + this.sqlServeurURL + ";Initial Catalog=ResHotel;Integrated Security=True";
+            co.ConnectionString = "Data Source=LAPTOP\\SQLEXPRESS;Initial Catalog=ResHotel;Integrated Security=True";
             co.Open();
 
             SqlCommand cmd = new SqlCommand();

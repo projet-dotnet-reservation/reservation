@@ -63,7 +63,7 @@ public partial class SearchForm : System.Web.UI.Page
                 item.Text = "&nbsp; Départ le " + String.Format("{0:d/M/yyyy à HH:mm}", volRetour.dateDepart) + " pour une arrivée le " + String.Format("{0:d/M/yyyy à HH:mm}", volRetour.dateArrivee);
                 vols_retours.Items.Add(item);
             }
-            /*/ Liste des hôtels
+            // Liste des hôtels
             hotels = RechercheVolsHotels.clsRecherche.rechercheHotels(villeArrivee);
             hotels_disponibles.Items.Clear();
             foreach (var hotel in hotels)
@@ -72,8 +72,8 @@ public partial class SearchForm : System.Web.UI.Page
                 item.Value = "vol_aller_" + hotel.id;
                 item.Selected = hotels.IndexOf(hotel) == 0;
                 item.Text = hotel.nom;
-                vols_retours.Items.Add(item);
-            } */
+                hotels_disponibles.Items.Add(item);
+            } 
         } 
     }
 

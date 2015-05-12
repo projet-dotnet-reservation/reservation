@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using lib_Config;
 
 namespace lib_LireHotels
 {
@@ -15,7 +16,8 @@ namespace lib_LireHotels
         {
 
             SqlConnection co = new SqlConnection();
-            co.ConnectionString = ConfigurationManager.ConnectionStrings["connecBaseHotel"].ConnectionString;
+            //co.ConnectionString = ConfigurationManager.ConnectionStrings["connecBaseHotel"].ConnectionString;
+            co.ConnectionString = "Data Source=LAPTOP\\SQLEXPRESS; Initial Catalog=HOTEL; Integrated Security=True";// clsConfig.readConfigString("connectBDHotel");
             co.Open();
 
             SqlCommand cmd = new SqlCommand();

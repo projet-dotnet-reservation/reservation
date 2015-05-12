@@ -11,13 +11,13 @@ namespace lib_ResaVols
     [Transaction(TransactionOption.Required), ObjectPooling(5, 10), EventTrackingEnabled(true)]
     public class clsResaVols : ServicedComponent
     {
-        public String sqlServeurURL;
+        //public String sqlServeurURL;
 
         [AutoComplete]
         public void reserverVol(String email, int idVol)
         {
             SqlConnection co = new SqlConnection();
-            co.ConnectionString = "Data Source=" + this.sqlServeurURL + ";Initial Catalog=ResVol;Integrated Security=True";
+            co.ConnectionString = "Data Source=LAPTOP\\SQLEXPRESS;Initial Catalog=ResVol;Integrated Security=True";
             co.Open();
 
             SqlCommand cmd = new SqlCommand();

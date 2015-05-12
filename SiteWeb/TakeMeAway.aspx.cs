@@ -10,12 +10,13 @@ public partial class SearchForm : System.Web.UI.Page
 {
 
     protected Boolean recherche = false;
+    protected String villeDepart;
+    protected String villeArrivee;
+    protected DateTime dateDepart;
+    protected DateTime dateRetour;
     protected List<RechercheVolsHotels.wsHotel.clsHotel> hotels = new List<RechercheVolsHotels.wsHotel.clsHotel>();
-    private RechercheVolsHotels.wsHotel.clsHotel hotelSelectionne;
     protected List<RechercheVolsHotels.wsVol.clsVol> volsAllers = new List<RechercheVolsHotels.wsVol.clsVol>();
-    private RechercheVolsHotels.wsVol.clsVol volAllerSelectionne;
     protected List<RechercheVolsHotels.wsVol.clsVol> volsRetours = new List<RechercheVolsHotels.wsVol.clsVol>();
-    private RechercheVolsHotels.wsVol.clsVol volRetourSelectionne;
 
     protected int check = 10;
 
@@ -27,10 +28,10 @@ public partial class SearchForm : System.Web.UI.Page
     protected void faites_moi_rever_Click(object sender, EventArgs e)
     {
         // Récupération des données saisies par l'utilisateur
-        String villeDepart = ville_depart.Text;
-        String villeArrivee = ville_arrivee.Text;
-        DateTime dateDepart = Convert.ToDateTime(date_depart.Text);
-        DateTime dateArrivee = Convert.ToDateTime(date_retour.Text);
+        villeDepart = ville_depart.Text;
+        villeArrivee = ville_arrivee.Text;
+        dateDepart = Convert.ToDateTime(date_depart.Text);
+        dateRetour = Convert.ToDateTime(date_retour.Text);
         // Modification de la page
         recherche = true;
         aller_ville_depart.Text = villeDepart;
@@ -53,15 +54,17 @@ public partial class SearchForm : System.Web.UI.Page
                 vols_allers.Items.Add(item);
             }
             // Liste des vols retours
-            volsRetours = RechercheVolsHotels.clsRecherche.rechercheVolsAvecDate(villeArrivee, villeDepart, dateDepart.AddDays(1));
+            volsRetours = RechercheVolsHotels.clsRecherche.rechercheVolsAvecDate(villeArrivee, villeDepart, dateRetour);
             vols_retours.Items.Clear();
-            foreach (var volRetour in volsRetours)
-            {
-                ListItem item = new ListItem();
-                item.Value = "vol_retour_" + volRetour.id;
-                item.Selected = volsRetours.IndexOf(volRetour) == 0;
-                item.Text = "&nbsp; Départ le " + String.Format("{0:d/M/yyyy à HH:mm}", volRetour.dateDepart) + " pour une arrivée le " + String.Format("{0:d/M/yyyy à HH:mm}", volRetour.dateArrivee);
-                vols_retours.Items.Add(item);
+            if (dateRetour > dateDepart) {
+                foreach (var volRetour in volsRetours)
+                {
+                    ListItem item = new ListItem();
+                    item.Value = "vol_retour_" + volRetour.id;
+                    item.Selected = volsRetours.IndexOf(volRetour) == 0;
+                    item.Text = "&nbsp; Départ le " + String.Format("{0:d/M/yyyy à HH:mm}", volRetour.dateDepart) + " pour une arrivée le " + String.Format("{0:d/M/yyyy à HH:mm}", volRetour.dateArrivee);
+                    vols_retours.Items.Add(item);
+                }
             }
             // Liste des hôtels
             hotels = RechercheVolsHotels.clsRecherche.rechercheHotels(villeArrivee);
@@ -69,7 +72,7 @@ public partial class SearchForm : System.Web.UI.Page
             foreach (var hotel in hotels)
             {
                 ListItem item = new ListItem();
-                item.Value = "vol_aller_" + hotel.id;
+                item.Value = "hotel_" + hotel.id;
                 item.Selected = hotels.IndexOf(hotel) == 0;
                 item.Text = hotel.nom;
                 hotels_disponibles.Items.Add(item);
@@ -79,6 +82,12 @@ public partial class SearchForm : System.Web.UI.Page
 
     protected void emmenez_moi_Click(object sender, EventArgs e)
     {
-        
+        int idVolAller = volsAllers[vols_allers.SelectedIndex].id;
+        int idVolRetour = -1;
+        if (volsRetours.Count != 0) idVolRetour = volsRetours[vols_retours.SelectedIndex].id;
+        int idHotel = hotels[hotels_disponibles.SelectedIndex].id;
+        MSMQReservation.clsReservationQueue.addResaToQueue(mail.Text, idVolAller, idVolRetour, idHotel, volsAllers[vols_allers.SelectedIndex].dateArrivee, dateRetour.AddDays(-1));
+        Response.Redirect("http://google.fr", false);
     }
+
 }
